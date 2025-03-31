@@ -12,8 +12,8 @@ class CarMake(models.Model):
     name = models.CharField(max_length=100, unique=True)
     description = models.TextField(blank=True, null=True)
     founded_year = models.PositiveIntegerField(
-        validators=[MinValueValidator(1886), MaxValueValidator(now().year)], 
-        blank=True, 
+        validators=[MinValueValidator(1886), MaxValueValidator(now().year)],
+        blank=True,
         null=True
     )
 
@@ -23,7 +23,8 @@ class CarMake(models.Model):
 
 # Car Model model
 class CarModel(models.Model):
-    car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)  # Many-to-One relationship
+    car_make = models.ForeignKey(
+        CarMake, on_delete=models.CASCADE)  # Many-to-One relationship
     name = models.CharField(max_length=100)
     CAR_TYPES = [
         ('SEDAN', 'Sedan'),
@@ -35,12 +36,16 @@ class CarModel(models.Model):
     ]
     type = models.CharField(max_length=10, choices=CAR_TYPES, default='SUV')
     year = models.IntegerField(default=2023,
-        validators=[
-            MaxValueValidator(2023),
-            MinValueValidator(2015)
-        ])
+                               validators=[
+                                   MaxValueValidator(2023),
+                                   MinValueValidator(2015)
+                               ])
     color = models.CharField(max_length=50, blank=True, null=True)
-    price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    price = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        blank=True,
+        null=True)
 
     def __str__(self):
         return f"{self.name} ({self.type}, {self.year})"

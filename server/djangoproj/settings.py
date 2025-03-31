@@ -34,7 +34,8 @@ ALLOWED_HOSTS = [
         'proxy.cognitiveclass.ai'
     ),
     (
-        'https://ashnishsharm-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.'
+        'https://ashnishsharm-8000.'
+        'theiadockernext-0-labs-prod-theiak8s-4-tor01.'
         'proxy.cognitiveclass.ai'
     ),
 ]
@@ -45,7 +46,8 @@ CSRF_TRUSTED_ORIGINS = [
         'proxy.cognitiveclass.ai'
     ),
     (
-        'https://ashnishsharm-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.'
+        'https://ashnishsharm-8000.'
+        'theiadockernext-0-labs-prod-theiak8s-4-tor01.'
         'proxy.cognitiveclass.ai'
     ),
 ]
